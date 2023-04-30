@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "launchpad",
+  "version": "${version}",
+  "name": "Launchpad",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/launchpad/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.delta.launchpad.Launchpads"
+    ]
+  },
+  "mixins": [
+    "launchpad.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "fabric": "*",
+    "minecraft": "1.19.4"
+  }
+}

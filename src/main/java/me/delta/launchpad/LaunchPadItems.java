@@ -28,7 +28,7 @@ public class LaunchPadItems {
     public static final Item STONE_LAUNCH_PAD = getItem(LaunchPadBlocks.STONE_LAUNCH_PAD);
     public static final Item BLACKSTONE_LAUNCH_PAD = getItem(LaunchPadBlocks.BLACKSTONE_LAUNCH_PAD);
     public static final Item IRON_LAUNCH_PAD = getItem(LaunchPadBlocks.IRON_LAUNCH_PAD);
-    public static final Item GOLD_LAUNCH_PAD = getItem(LaunchPadBlocks.GOLD_LAUNCH_PAD);
+    public static final Item GOLDEN_LAUNCH_PAD = getItem(LaunchPadBlocks.GOLDEN_LAUNCH_PAD);
 
     public static final ItemGroup ITEM_GROUP = PolymerItemGroupUtils.builder(new Identifier(MOD_ID, MOD_ID))
             .icon(IRON_LAUNCH_PAD::getDefaultStack)
@@ -46,21 +46,22 @@ public class LaunchPadItems {
 
     static void register()
     {
-        registerItem("oak_launch_pad", OAK_LAUNCH_PAD);
-        registerItem("spruce_launch_pad", SPRUCE_LAUNCH_PAD);
-        registerItem("birch_launch_pad", BIRCH_LAUNCH_PAD);
-        registerItem("jungle_launch_pad", JUNGLE_LAUNCH_PAD);
-        registerItem("acacia_launch_pad", ACACIA_LAUNCH_PAD);
-        registerItem("dark_oak_launch_pad", DARK_OAK_LAUNCH_PAD);
-        registerItem("mangrove_launch_pad", MANGROVE_LAUNCH_PAD);
-        registerItem("cherry_launch_pad", CHERRY_LAUNCH_PAD);
-        registerItem("bamboo_launch_pad", BAMBOO_LAUNCH_PAD);
-        registerItem("crimson_launch_pad", CRIMSON_LAUNCH_PAD);
-        registerItem("warped_launch_pad", WARPED_LAUNCH_PAD);
-        registerItem("stone_launch_pad", STONE_LAUNCH_PAD);
-        registerItem("blackstone_launch_pad", BLACKSTONE_LAUNCH_PAD);
-        registerItem("iron_launch_pad", IRON_LAUNCH_PAD);
-        registerItem("gold_launch_pad", GOLD_LAUNCH_PAD);
+        registerItem("oak_launchpad", OAK_LAUNCH_PAD);
+        registerItem("spruce_launchpad", SPRUCE_LAUNCH_PAD);
+        registerItem("birch_launchpad", BIRCH_LAUNCH_PAD);
+        registerItem("jungle_launchpad", JUNGLE_LAUNCH_PAD);
+        registerItem("acacia_launchpad", ACACIA_LAUNCH_PAD);
+        registerItem("dark_oak_launchpad", DARK_OAK_LAUNCH_PAD);
+        registerItem("mangrove_launchpad", MANGROVE_LAUNCH_PAD);
+        registerItem("cherry_launchpad", CHERRY_LAUNCH_PAD);
+        registerItem("bamboo_launchpad", BAMBOO_LAUNCH_PAD);
+        registerItem("crimson_launchpad", CRIMSON_LAUNCH_PAD);
+        registerItem("warped_launchpad", WARPED_LAUNCH_PAD);
+        registerItem("stone_launchpad", STONE_LAUNCH_PAD);
+        registerItem("blackstone_launchpad", BLACKSTONE_LAUNCH_PAD);
+        registerItem("iron_launchpad", IRON_LAUNCH_PAD);
+        registerItem("gold_launchpad", GOLDEN_LAUNCH_PAD);
+
 
         ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> {
             content.add(OAK_LAUNCH_PAD);
@@ -76,7 +77,7 @@ public class LaunchPadItems {
             content.add(WARPED_LAUNCH_PAD);
             content.add(STONE_LAUNCH_PAD);
             content.add(BLACKSTONE_LAUNCH_PAD);
-            content.add(GOLD_LAUNCH_PAD);
+            content.add(GOLDEN_LAUNCH_PAD);
             content.add(IRON_LAUNCH_PAD);
         });
     }

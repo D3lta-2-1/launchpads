@@ -29,7 +29,7 @@ public class LaunchPadBlocks {
     public static final Launchpad WARPED_LAUNCH_PAD = createPad(Blocks.WARPED_PRESSURE_PLATE);
     public static final Launchpad STONE_LAUNCH_PAD = createPad(Blocks.STONE_PRESSURE_PLATE);
     public static final Launchpad BLACKSTONE_LAUNCH_PAD = createPad(Blocks.POLISHED_BLACKSTONE_PRESSURE_PLATE);
-    public static final Launchpad GOLD_LAUNCH_PAD = createPad(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
+    public static final Launchpad GOLDEN_LAUNCH_PAD = createPad(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE);
     public static final Launchpad IRON_LAUNCH_PAD = createPad(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE);
 
     private static Launchpad createPad(Block baseBlock)
@@ -51,7 +51,7 @@ public class LaunchPadBlocks {
             WARPED_LAUNCH_PAD,
             STONE_LAUNCH_PAD,
             BLACKSTONE_LAUNCH_PAD,
-            GOLD_LAUNCH_PAD,
+            GOLDEN_LAUNCH_PAD,
             IRON_LAUNCH_PAD
     ).build();
 
@@ -62,23 +62,23 @@ public class LaunchPadBlocks {
 
     static void register()
     {
-        Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "launch_pad"), LAUNCH_PAD_ENTITY);
+        Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "launchpad"), LAUNCH_PAD_ENTITY);
         PolymerBlockUtils.registerBlockEntity(LAUNCH_PAD_ENTITY);
 
-        register("oak_launch_pad", OAK_LAUNCH_PAD);
-        register("spruce_launch_pad", SPRUCE_LAUNCH_PAD);
-        register("birch_launch_pad", BIRCH_LAUNCH_PAD);
-        register("jungle_launch_pad", JUNGLE_LAUNCH_PAD);
-        register("acacia_launch_pad", ACACIA_LAUNCH_PAD);
-        register("dark_oak_launch_pad", DARK_OAK_LAUNCH_PAD);
-        register("mangrove_launch_pad", MANGROVE_LAUNCH_PAD);
-        register("cherry_launch_pad", CHERRY_LAUNCH_PAD);
-        register("bamboo_launch_pad", BAMBOO_LAUNCH_PAD);
-        register("crimson_launch_pad", CRIMSON_LAUNCH_PAD);
-        register("warped_launch_pad", WARPED_LAUNCH_PAD);
-        register("stone_launch_pad", STONE_LAUNCH_PAD);
-        register("blackstone_launch_pad", BLACKSTONE_LAUNCH_PAD);
-        register("golden_launch_pad", GOLD_LAUNCH_PAD);
-        register("iron_launch_pad", IRON_LAUNCH_PAD);
+        register("oak_launchpad", OAK_LAUNCH_PAD);
+        register("spruce_launchpad", SPRUCE_LAUNCH_PAD);
+        register("birch_launchpad", BIRCH_LAUNCH_PAD);
+        register("jungle_launchpad", JUNGLE_LAUNCH_PAD);
+        register("acacia_launchpad", ACACIA_LAUNCH_PAD);
+        register("dark_oak_launchpad", DARK_OAK_LAUNCH_PAD);
+        register("mangrove_launchpad", MANGROVE_LAUNCH_PAD);
+        register("cherry_launchpad", CHERRY_LAUNCH_PAD);
+        register("bamboo_launchpad", BAMBOO_LAUNCH_PAD);
+        register("crimson_launchpad", CRIMSON_LAUNCH_PAD);
+        register("warped_launchpad", WARPED_LAUNCH_PAD);
+        register("stone_launchpad", STONE_LAUNCH_PAD);
+        register("blackstone_launchpad", BLACKSTONE_LAUNCH_PAD);
+        register("golden_launchpad", GOLDEN_LAUNCH_PAD);
+        register("iron_launchpad", IRON_LAUNCH_PAD);
     }
 }

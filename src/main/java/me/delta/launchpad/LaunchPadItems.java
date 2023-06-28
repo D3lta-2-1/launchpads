@@ -3,9 +3,8 @@ package me.delta.launchpad;
 import eu.pb4.polymer.core.api.item.PolymerBlockItem;
 import eu.pb4.polymer.core.api.item.PolymerItemGroupUtils;
 import me.delta.launchpad.block.Launchpad;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -30,10 +29,6 @@ public class LaunchPadItems {
     public static final Item IRON_LAUNCH_PAD = getItem(LaunchPadBlocks.IRON_LAUNCH_PAD);
     public static final Item GOLDEN_LAUNCH_PAD = getItem(LaunchPadBlocks.GOLDEN_LAUNCH_PAD);
 
-    public static final ItemGroup ITEM_GROUP = PolymerItemGroupUtils.builder(new Identifier(MOD_ID, MOD_ID))
-            .icon(IRON_LAUNCH_PAD::getDefaultStack)
-            .displayName(Text.translatable("category.launchpad.title"))
-            .build();
     private static Item getItem(Launchpad pad)
     {
         return new PolymerBlockItem(pad, new Item.Settings(), pad.getVirtualBlock().asItem());
@@ -44,8 +39,7 @@ public class LaunchPadItems {
         Registry.register(Registries.ITEM, new Identifier(MOD_ID, name), item);
     }
 
-    static void register()
-    {
+    static void register() {
         registerItem("oak_launchpad", OAK_LAUNCH_PAD);
         registerItem("spruce_launchpad", SPRUCE_LAUNCH_PAD);
         registerItem("birch_launchpad", BIRCH_LAUNCH_PAD);
@@ -62,23 +56,26 @@ public class LaunchPadItems {
         registerItem("iron_launchpad", IRON_LAUNCH_PAD);
         registerItem("gold_launchpad", GOLDEN_LAUNCH_PAD);
 
-
-        ItemGroupEvents.modifyEntriesEvent(ITEM_GROUP).register(content -> {
-            content.add(OAK_LAUNCH_PAD);
-            content.add(SPRUCE_LAUNCH_PAD);
-            content.add(BIRCH_LAUNCH_PAD);
-            content.add(JUNGLE_LAUNCH_PAD);
-            content.add(ACACIA_LAUNCH_PAD);
-            content.add(DARK_OAK_LAUNCH_PAD);
-            content.add(MANGROVE_LAUNCH_PAD);
-            content.add(CHERRY_LAUNCH_PAD);
-            content.add(BAMBOO_LAUNCH_PAD);
-            content.add(CRIMSON_LAUNCH_PAD);
-            content.add(WARPED_LAUNCH_PAD);
-            content.add(STONE_LAUNCH_PAD);
-            content.add(BLACKSTONE_LAUNCH_PAD);
-            content.add(GOLDEN_LAUNCH_PAD);
-            content.add(IRON_LAUNCH_PAD);
-        });
+        PolymerItemGroupUtils.registerPolymerItemGroup(new Identifier(MOD_ID, "launchpads"), FabricItemGroup.builder()
+                .icon(IRON_LAUNCH_PAD::getDefaultStack)
+                .displayName(Text.translatable("category.launchpad.title"))
+                .entries((ctx, entries) -> {
+                    entries.add(OAK_LAUNCH_PAD);
+                    entries.add(SPRUCE_LAUNCH_PAD);
+                    entries.add(BIRCH_LAUNCH_PAD);
+                    entries.add(JUNGLE_LAUNCH_PAD);
+                    entries.add(ACACIA_LAUNCH_PAD);
+                    entries.add(DARK_OAK_LAUNCH_PAD);
+                    entries.add(MANGROVE_LAUNCH_PAD);
+                    entries.add(CHERRY_LAUNCH_PAD);
+                    entries.add(BAMBOO_LAUNCH_PAD);
+                    entries.add(CRIMSON_LAUNCH_PAD);
+                    entries.add(WARPED_LAUNCH_PAD);
+                    entries.add(STONE_LAUNCH_PAD);
+                    entries.add(BLACKSTONE_LAUNCH_PAD);
+                    entries.add(IRON_LAUNCH_PAD);
+                    entries.add(GOLDEN_LAUNCH_PAD);
+                })
+                .build());
     }
 }
